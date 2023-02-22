@@ -1,4 +1,1 @@
-export type User = {
-  id: number;
-  name: string;
-};
+export { User, UserRequest } from "../generated";

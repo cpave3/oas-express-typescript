@@ -221,7 +221,7 @@ components:
           type: string
           minLength: 1
           maxLength: 1024
-        user_id:
+        author_user_id:
           type: integer
         assigned_user_id:
           type: integer
@@ -237,7 +237,7 @@ components:
           type: string
           minLength: 1
           maxLength: 1024
-        user_id:
+        author_user_id:
           type: integer
         assigned_user_id:
           type: integer
