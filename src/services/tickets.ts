@@ -22,7 +22,6 @@ function updateTicket(id: number, ticket: Omit<Ticket, "id">) {
   const index = tickets.findIndex((ticket) => ticket.id === id);
   const oldTicket = tickets[index];
   const newTicket = { ...oldTicket, ...ticket };
-  console.log({ index, oldTicket, newTicket });
   tickets[index] = newTicket;
   return newTicket;
 }

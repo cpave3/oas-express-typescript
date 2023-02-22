@@ -11,14 +11,13 @@ export default {
   updateUser: async (req: Request, res: Response) => {
     const { id } = req.params;
     const user = req.body;
-    console.log({ user, b: req.body });
     const updatedUser = await usersService.updateUser(Number(id), user);
     res.send(updatedUser);
   },
   createUser: async (req: ApiRequest<UserRequest>, res: Response) => {
     const user = req.body;
     const newUser = await usersService.createUser(user);
-    res.send(newUser);
+    res.status(201).send(newUser);
   },
   getUserById: async (req: ApiRequest<UserRequest>, res: Response) => {
     const { id } = req.params;
@@ -28,6 +27,6 @@ export default {
   deleteUser: async (req: Request, res: Response) => {
     const { id } = req.params;
     await usersService.deleteUser(Number(id));
-    res.send("User deleted");
+    res.status(204).send();
   },
 };

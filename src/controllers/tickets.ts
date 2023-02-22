@@ -16,7 +16,7 @@ export default {
   createTicket: async (req: ApiRequest<TicketRequest>, res: Response) => {
     const ticket = req.body;
     const newTicket = await ticketsService.createTicket(ticket);
-    res.send(newTicket);
+    res.status(201).send(newTicket);
   },
   updateTicket: async (req: ApiRequest<TicketRequest>, res: Response) => {
     const { id } = req.params;
@@ -27,6 +27,6 @@ export default {
   deleteTicket: async (req: Request, res: Response) => {
     const { id } = req.params;
     await ticketsService.deleteTicket(Number(id));
-    res.send("Ticket deleted");
+    res.status(204).send();
   },
 };

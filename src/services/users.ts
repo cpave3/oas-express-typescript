@@ -22,7 +22,6 @@ function updateUser(id: number, user: Omit<User, "id">) {
   const index = users.findIndex((user) => user.id === id);
   const oldUser = users[index];
   const newUser = { ...oldUser, ...user };
-  console.log({ index, oldUser, newUser });
   users[index] = newUser;
   return newUser;
 }
