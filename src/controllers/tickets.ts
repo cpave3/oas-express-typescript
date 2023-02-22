@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { TicketRequest } from "../generated";
 import ticketsService from "../services/tickets";
+import { ApiRequest } from "../types/http";
 
 export default {
   getTickets: async (req: Request, res: Response) => {
@@ -11,12 +13,12 @@ export default {
     const ticket = await ticketsService.getTicketById(Number(id));
     res.send(ticket);
   },
-  createTicket: async (req: Request, res: Response) => {
+  createTicket: async (req: ApiRequest<TicketRequest>, res: Response) => {
     const ticket = req.body;
     const newTicket = await ticketsService.createTicket(ticket);
     res.send(newTicket);
   },
-  updateTicket: async (req: Request, res: Response) => {
+  updateTicket: async (req: ApiRequest<TicketRequest>, res: Response) => {
     const { id } = req.params;
     const ticket = req.body;
     const updatedTicket = await ticketsService.updateTicket(Number(id), ticket);
