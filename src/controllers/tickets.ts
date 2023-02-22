@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import ticketsService from "../services/ticketsService";
+import ticketsService from "../services/tickets";
 
 export default {
   getTickets: async (req: Request, res: Response) => {
