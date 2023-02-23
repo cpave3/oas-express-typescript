@@ -6,5 +6,4 @@ This project is lacking in some fundamental areas that would be needed in a prod
 
 ## Further Improvements
 
-- Add request validation
 - Add persistent datastore
