@@ -1,0 +1,20 @@
+name: Deploy documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-doc:
+    name: Deploy API doc on Bump
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy API documentation
+        uses: bump-sh/github-action@v1
+        with:
+          doc: 99494606-ea96-4b43-93db-859a08cf1f1b
+          token: ${{secrets.BUMP_TOKEN}}
+          file: openapi.yaml
