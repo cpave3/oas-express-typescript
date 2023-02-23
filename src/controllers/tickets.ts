@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { TicketRequest } from "../generated";
 import ticketsService from "../services/tickets";
 import { ApiRequest } from "../types/http";
+import { TicketRequest } from "../types/tickets";
 
 export default {
   getTickets: async (req: Request, res: Response) => {

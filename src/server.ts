@@ -8,10 +8,6 @@ const app = express();
 
 const jsonParser = bodyParser.json();
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
-
 app.use("/api/users", jsonParser, usersRoutes);
 app.use("/api/tickets", jsonParser, ticketsRoutes);
 

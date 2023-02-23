@@ -2,7 +2,8 @@ import jestOpenAPI from "jest-openapi";
 import request from "supertest";
 import path from "path";
 import server from "../server";
-import { TicketRequest, UserRequest } from "../generated";
+import { UserRequest } from "../types/users";
+import { TicketRequest } from "../types/tickets";
 
 jestOpenAPI(path.join(__dirname, "../../openapi.yaml"));
 

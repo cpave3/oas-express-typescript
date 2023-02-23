@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon",
-    "generate": "npx openapi-typescript-codegen --input ./openapi.yaml --output ./src/generated",
+    "generate": "npx openapi-to-zod -i 'openapi.yaml' -o './src/schemas'",
     "test": "jest"
   },
   "author": "",
@@ -17,7 +17,9 @@
     "jest": "^29.4.3",
     "jest-openapi": "^0.14.2",
     "supertest": "^6.3.3",
-    "ts-jest": "^29.0.5"
+    "ts-jest": "^29.0.5",
+    "zod": "^3.20.6",
+    "zod-express-middleware": "^1.4.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",

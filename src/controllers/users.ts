@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { UserRequest } from "../generated";
 import usersService from "../services/users";
 import { ApiRequest } from "../types/http";
+import { UserRequest } from "../types/users";
 
 export default {
   getUsers: async (req: Request, res: Response) => {
