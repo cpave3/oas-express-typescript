@@ -1,6 +1,10 @@
 import users from "../data/users";
 import { User } from "../types/users";
 
+// Here, you define the functions that will be called by the controllers.
+// At this layer, you can add business logic, and interact with your storage layer.
+// The types used here are derived from your OpenAPI spec, via zod.
+
 function getUsers() {
   return users;
 }

@@ -3,6 +3,10 @@ import usersService from "../services/users";
 import { ApiRequest } from "../types/http";
 import { UserRequest } from "../types/users";
 
+// Here, you define the functions that will be called by the routes.
+// These functions invoke the service functions and send the response.
+// The service functions contain the business logic.
+
 export default {
   getUsers: async (req: Request, res: Response) => {
     const users = await usersService.getUsers();

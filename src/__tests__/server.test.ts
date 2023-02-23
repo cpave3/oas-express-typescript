@@ -5,8 +5,10 @@ import server from "../server";
 import { UserRequest } from "../types/users";
 import { TicketRequest } from "../types/tickets";
 
+// Import your OpenAPI spec
 jestOpenAPI(path.join(__dirname, "../../openapi.yaml"));
 
+// Run tests to validate that your API is compliant with your OpenAPI spec
 describe("server.js", () => {
   describe("Users API", () => {
     it("GET /users", async () => {
